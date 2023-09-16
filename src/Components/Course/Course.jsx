@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 
-const Course = ({ course }) => {
+const Course = ({ course, handleAddCourse }) => {
     const { id, cover, title, description, price, credit } = course;
 
     return (
@@ -12,13 +12,14 @@ const Course = ({ course }) => {
                 <img src="../../../Asset/dollar-sign 1.png" alt="" /><p>Price: {price}</p>
                 <img src="../../../Asset/Frame.png" alt="" /><p>Credit: {credit} hr</p>
             </div>
-            <button className="bg-blue-500 text-white p-1 rounded-lg w-full">Select</button>
+            <button onClick={() => handleAddCourse(course)} className="bg-blue-500 text-white p-1 rounded-lg w-full">Select</button>
         </div>
     );
 };
 
 Course.propTypes = {
-    course: PropTypes.object
+    course: PropTypes.object.isRequired,
+    handleAddCourse: PropTypes.func
 }
 
 export default Course;
