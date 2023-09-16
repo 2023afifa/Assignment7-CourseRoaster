@@ -1,17 +1,11 @@
 import PropTypes from 'prop-types';
-// import { useState } from 'react';
 
-const Credit = ({ credit}) => {
+const Credit = ({ credit }) => {
     const { title } = credit;
-    // const [count, setCount] = useState(0);
-
-    // const countNum = () => {
-    //     setCount(count + 1);
-    // }
 
     return (
         <div>
-            <li className='text-neutral-500'>{title}</li>
+            <li className='text-neutral-500 list-decimal'> {title}</li>
         </div>
     );
 };

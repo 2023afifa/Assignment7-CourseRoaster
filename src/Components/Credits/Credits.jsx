@@ -9,9 +9,11 @@ const Credits = ({courses, creditHour, remainingCredit}) => {
             <h2 className='text-blue-500 text-lg font-bold'>Credit Hour Remaining: {remainingCredit} hr</h2>
             <hr className='my-5'/>
             <h2 className="text-xl font-bold my-4">Course Name</h2>
+            <ol className='pl-5'>
             {
                 courses.map((credit, idx) => <Credit key={idx} credit={credit}></Credit>)
             }
+            </ol>
             <hr className='my-5'/>
 
             <h3>Total Credit Hour: {creditHour}</h3>

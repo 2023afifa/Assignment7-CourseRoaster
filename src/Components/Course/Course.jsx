@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 
-const Course = ({ course, handleAddCourse, handleCreditHour }) => {
-    const { id, cover, title, description, price, credit } = course;
+const Course = ({ course, handleAddCourse }) => {
+    const { cover, title, description, price, credit } = course;
 
     return (
         <div className="bg-white p-4 rounded-xl">
@@ -12,7 +12,7 @@ const Course = ({ course, handleAddCourse, handleCreditHour }) => {
                 <img src="../../../Asset/dollar-sign 1.png" alt="" /><p>Price: {price}</p>
                 <img src="../../../Asset/Frame.png" alt="" /><p>Credit: {credit} hr</p>
             </div>
-            <button onClick={() => {handleAddCourse(course); handleCreditHour(credit)}} className="bg-blue-500 text-white p-1 rounded-lg w-full">Select</button>
+            <button onClick={() => handleAddCourse(course)} className="bg-blue-500 text-white p-1 rounded-lg w-full">Select</button>
         </div>
     );
 };
@@ -20,8 +20,6 @@ const Course = ({ course, handleAddCourse, handleCreditHour }) => {
 Course.propTypes = {
     course: PropTypes.object.isRequired,
     handleAddCourse: PropTypes.func,
-    handleCreditHour: PropTypes.func,
-    handleRemainingCredit: PropTypes.func
 }
 
 export default Course;
