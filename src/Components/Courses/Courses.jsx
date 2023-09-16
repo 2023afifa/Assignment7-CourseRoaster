@@ -4,7 +4,7 @@ import { useEffect } from "react";
 import { useState } from "react";
 
 
-const Courses = ({handleAddCourse}) => {
+const Courses = ({handleAddCourse, handleCreditHour}) => {
     const [courses, setCourses] = useState([]);
 
     useEffect(() => {
@@ -21,6 +21,7 @@ const Courses = ({handleAddCourse}) => {
                     key={course.id}
                     course={course}
                     handleAddCourse={handleAddCourse}
+                    handleCreditHour={handleCreditHour}
                 ></Course>)
             }
         </div>
@@ -28,7 +29,8 @@ const Courses = ({handleAddCourse}) => {
 };
 
 Courses.propTypes = {
-    handleAddCourse: PropTypes.func
+    handleAddCourse: PropTypes.func,
+    handleCreditHour: PropTypes.func,
 }
 
 export default Courses;
